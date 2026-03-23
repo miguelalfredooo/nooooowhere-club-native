@@ -68,11 +68,10 @@ struct HoldButtonView: View {
       }
     }
     .frame(width: BUTTON_SIZE, height: BUTTON_SIZE)
-    .onTapGesture(count: 1) { }  // For gesture handling
     .gesture(
       LongPressGesture(minimumDuration: 0.05)
-        .onChanged { _ in
-          if !disabled && !isCompleted && !isAnimating {
+        .onChanged { isPressing in
+          if isPressing && !disabled && !isCompleted && !isAnimating {
             beginAnimation()
           }
         }
@@ -91,10 +90,13 @@ struct HoldButtonView: View {
   private func beginAnimation() {
     isAnimating = true
     animationStartTime = Date()
+    print("Animation started")
 
     // Start display link simulation with Timer
     displayLink = Timer.scheduledTimer(withTimeInterval: 1/60.0, repeats: true) { _ in
-      updateAnimationFrame()
+      DispatchQueue.main.async {
+        self.updateAnimationFrame()
+      }
     }
   }
 
@@ -104,11 +106,9 @@ struct HoldButtonView: View {
     let elapsed = Date().timeIntervalSince(startTime)
     let progress = min(elapsed / ANIMATION_DURATION, 1.0)
 
-    // Update animation values
-    withAnimation(.linear(duration: 0.016)) {
-      arcProgress = progress
-      blurRadius = 20 - (progress * 20)
-    }
+    // Update animation values directly (no withAnimation - causes issues with Timer)
+    arcProgress = progress
+    blurRadius = 20 - (progress * 20)
 
     updatePhaseLabels(for: progress)
 
