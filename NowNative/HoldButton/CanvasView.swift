@@ -55,18 +55,49 @@ class CanvasView: UIView {
     path.stroke()
   }
 
-  /// Draw the animated arc with rainbow gradient flow
+  /// Draw the animated arc with blurred rainbow gradient (Apple Intelligence style)
   private func drawAnimatedArc(_ context: CGContext) {
-    let angle = arcProgress * 360  // 0 to 360 degrees
-    let radians = (angle - 90) * (CGFloat.pi / 180)  // Start from top (offset -90°)
+    guard arcProgress > 0 else { return }
 
-    let startAngle = CGFloat(-90) * (CGFloat.pi / 180)  // Start at top
+    let angle = arcProgress * 360
+    let radians = (angle - 90) * (CGFloat.pi / 180)
+    let startAngle = CGFloat(-90) * (CGFloat.pi / 180)
     let endAngle = radians
 
-    // Draw gradient arc in segments for smooth rainbow effect
-    let segmentCount = Int(max(1, arcProgress * 60))  // More segments as arc fills
+    // Draw blurred glow layers for smooth gradient effect
+    let glowLayers = 8
     let colors = rainbowColors()
+    let segmentCount = Int(max(1, arcProgress * 40))
 
+    // First pass: Draw thick blurred base (glow)
+    for layer in 0..<glowLayers {
+      let layerProgress = CGFloat(layer) / CGFloat(glowLayers)
+      let layerOpacity = (1.0 - layerProgress) * 0.15  // Fade out for glow effect
+
+      for i in 0..<segmentCount {
+        let segmentStart = startAngle + (CGFloat(i) / CGFloat(segmentCount)) * (endAngle - startAngle)
+        let segmentEnd = startAngle + (CGFloat(i + 1) / CGFloat(segmentCount)) * (endAngle - startAngle)
+
+        let colorIndex = Int(CGFloat(i) / CGFloat(segmentCount) * CGFloat(colors.count - 1))
+        let baseColor = colors[min(colorIndex, colors.count - 1)]
+        let glowColor = baseColor.withAlphaComponent(layerOpacity)
+
+        let path = UIBezierPath(
+          arcCenter: CGPoint(x: ARC_CENTER_X, y: ARC_CENTER_Y),
+          radius: ARC_RADIUS + CGFloat(layer) * 1.2,
+          startAngle: segmentStart,
+          endAngle: segmentEnd,
+          clockwise: true
+        )
+
+        glowColor.setStroke()
+        path.lineWidth = 4 + CGFloat(layer) * 0.5
+        path.lineCapStyle = .round
+        path.stroke()
+      }
+    }
+
+    // Second pass: Draw sharp main arc on top
     for i in 0..<segmentCount {
       let segmentStart = startAngle + (CGFloat(i) / CGFloat(segmentCount)) * (endAngle - startAngle)
       let segmentEnd = startAngle + (CGFloat(i + 1) / CGFloat(segmentCount)) * (endAngle - startAngle)
@@ -92,14 +123,14 @@ class CanvasView: UIView {
   /// Generate soft rainbow colors for the flowing arc
   private func rainbowColors() -> [UIColor] {
     return [
-      UIColor(red: 1.0, green: 0.2, blue: 0.4, alpha: 0.9),    // Soft red
-      UIColor(red: 1.0, green: 0.5, blue: 0.2, alpha: 0.9),    // Soft orange
-      UIColor(red: 1.0, green: 0.8, blue: 0.2, alpha: 0.9),    // Soft yellow
-      UIColor(red: 0.4, green: 0.9, blue: 0.3, alpha: 0.9),    // Soft green
-      UIColor(red: 0.3, green: 0.7, blue: 0.9, alpha: 0.9),    // Soft cyan
-      UIColor(red: 0.5, green: 0.4, blue: 0.9, alpha: 0.9),    // Soft blue
-      UIColor(red: 0.8, green: 0.4, blue: 0.8, alpha: 0.9),    // Soft violet
-      UIColor(red: 1.0, green: 0.3, blue: 0.6, alpha: 0.9),    // Soft magenta
+      UIColor(red: 1.0, green: 0.3, blue: 0.4, alpha: 0.85),    // Rose
+      UIColor(red: 1.0, green: 0.5, blue: 0.2, alpha: 0.85),    // Orange
+      UIColor(red: 1.0, green: 0.75, blue: 0.1, alpha: 0.85),   // Gold
+      UIColor(red: 0.5, green: 0.85, blue: 0.3, alpha: 0.85),   // Green
+      UIColor(red: 0.2, green: 0.7, blue: 0.95, alpha: 0.85),   // Sky
+      UIColor(red: 0.6, green: 0.4, blue: 0.95, alpha: 0.85),   // Purple
+      UIColor(red: 0.9, green: 0.3, blue: 0.7, alpha: 0.85),    // Magenta
+      UIColor(red: 1.0, green: 0.3, blue: 0.5, alpha: 0.85),    // Pink
     ]
   }
 }
