@@ -1,4 +1,5 @@
 import UIKit
+import AVFoundation
 
 /// Main HoldButton view container. Manages:
 /// - Arc canvas (Core Graphics drawing)
@@ -6,11 +7,13 @@ import UIKit
 /// - Center dot (amber marker)
 /// - Phase label (text with opacity animation)
 /// - Gesture recognition and state management
+/// - Haptic feedback at key moments
 class HoldButtonView: UIView {
   // MARK: - Configuration
 
   private let BUTTON_SIZE: CGFloat = 80
   private let ARC_RADIUS: CGFloat = 45
+  private let ANIMATION_DURATION: TimeInterval = 3.0
 
   // MARK: - Subviews
 
@@ -25,6 +28,8 @@ class HoldButtonView: UIView {
   private var animationStartTime: CFTimeInterval = 0
   private var isAnimating = false
   private(set) var isCompleted = false
+
+  private var lastPhaseLabel: String = ""
 
   private(set) var arcProgress: CGFloat = 0 {
     didSet { updateArcPath() }
@@ -191,6 +196,9 @@ class HoldButtonView: UIView {
     isAnimating = false
     isCompleted = true
 
+    // Trigger completion haptic (heavy impact)
+    triggerCompletionHaptic()
+
     // Dim button
     UIView.animate(withDuration: 0.4) {
       self.layer.opacity = 0.4
@@ -209,6 +217,7 @@ class HoldButtonView: UIView {
     displayLink?.invalidate()
     displayLink = nil
     isAnimating = false
+    lastPhaseLabel = ""
 
     // Reverse animations
     UIView.animate(
@@ -242,29 +251,67 @@ class HoldButtonView: UIView {
   // MARK: - Phase Label Updates
 
   private func updatePhaseLabels(for progress: CGFloat) {
-    let thresholds: [(CGFloat, String)] = [
+    let phases: [(threshold: CGFloat, label: String)] = [
       (0.0, "Noticing"),
       (0.333, "Reading"),
       (0.667, "Recognising"),
       (1.0, ""),
     ]
 
-    for (threshold, label) in thresholds {
-      let transitionStart = threshold - 0.02
-      let transitionEnd = threshold + 0.02
+    // Determine current phase and transition state
+    var currentLabel = ""
+    var targetAlpha: CGFloat = 0
 
-      if progress >= transitionStart && progress < transitionEnd {
-        let transitionProgress = (progress - transitionStart) / 0.04
+    for i in 0..<phases.count {
+      let (threshold, label) = phases[i]
 
-        if label.isEmpty {
-          // Fade out existing label
-          phaseLabel.alpha = max(0, 1 - transitionProgress)
-        } else if phaseLabel.text != label {
-          // Fade in new label
-          phaseLabel.text = label
-          phaseLabel.alpha = transitionProgress
+      if progress >= threshold {
+        currentLabel = label
+
+        // If we're at the transition point, fade out
+        if i < phases.count - 1 {
+          let nextThreshold = phases[i + 1].threshold
+          let transitionStart = nextThreshold - 0.04  // 200ms transition window
+
+          if progress >= transitionStart {
+            // Fade out
+            let transitionProgress = (progress - transitionStart) / 0.04
+            targetAlpha = max(0, 1 - transitionProgress)
+          } else {
+            // Stable display
+            targetAlpha = 1.0
+          }
+        } else {
+          targetAlpha = 0  // Final phase (empty label)
         }
       }
     }
+
+    // Update label if it changed
+    if currentLabel != lastPhaseLabel {
+      phaseLabel.text = currentLabel
+      lastPhaseLabel = currentLabel
+      targetAlpha = currentLabel.isEmpty ? 0 : 1.0
+
+      // Trigger haptic at phase transitions (except empty label)
+      if !currentLabel.isEmpty {
+        triggerPhaseTransitionHaptic()
+      }
+    }
+
+    // Smoothly update alpha
+    phaseLabel.alpha = targetAlpha
+  }
+
+  // MARK: - Haptic Feedback
+
+  private func triggerCompletionHaptic() {
+    let impact = UIImpactFeedbackGenerator(style: .heavy)
+    impact.impactOccurred()
+  }
+
+  private func triggerPhaseTransitionHaptic() {
+    let impact = UIImpactFeedbackGenerator(style: .light)
+    impact.impactOccurred()
   }
 }
