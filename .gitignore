@@ -1,0 +1,33 @@
+# Xcode
+*.pbxproj.bak
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+DerivedData/
+Build/
+*.swiftpm/xcode/package.xcworkspace/xcuserdata/
+
+# Swift
+.build/
+.swiftpm/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode
+*.xcodeproj
+*.xcworkspace
+
+# IDE
+.vscode/
+.idea/
+
+# Environment
+.env
+.env.local
+
+# Pods
+Pods/
+Podfile.lock
