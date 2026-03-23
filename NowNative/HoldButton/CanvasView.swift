@@ -46,7 +46,7 @@ class CanvasView: UIView {
       arcCenter: CGPoint(x: ARC_CENTER_X, y: ARC_CENTER_Y),
       radius: ARC_RADIUS,
       startAngle: 0,
-      endAngle: .pi * 2,
+      endAngle: CGFloat.pi * 2,
       clockwise: true
     )
 
@@ -58,10 +58,10 @@ class CanvasView: UIView {
   /// Draw the animated arc (amber, 3pt stroke, clockwise from top)
   private func drawAnimatedArc(_ context: CGContext) {
     let angle = arcProgress * 360  // 0 to 360 degrees
-    let radians = (angle - 90) * (.pi / 180)  // Start from top (offset -90°)
+    let radians = (angle - 90) * (CGFloat.pi / 180)  // Start from top (offset -90°)
 
-    let startAngle = CGFloat(-90 * (.pi / 180))  // Start at top
-    let endAngle = CGFloat(radians)
+    let startAngle = CGFloat(-90) * (CGFloat.pi / 180)  // Start at top
+    let endAngle = radians
 
     let path = UIBezierPath(
       arcCenter: CGPoint(x: ARC_CENTER_X, y: ARC_CENTER_Y),
