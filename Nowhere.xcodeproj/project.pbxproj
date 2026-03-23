@@ -33,6 +33,14 @@
 		A10010160001 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
+/* Begin XCSwiftPackageProductDependency section */
+		A10010370001 /* Pow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A10010350001 /* XCRemoteSwiftPackageReference "Pow" */;
+			productName = pow;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		A10010170001 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -135,6 +143,17 @@
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A10010350001 /* XCRemoteSwiftPackageReference "Pow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/movingparts-io/Pow.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin PBXProject section */
 		A10010230001 /* Project object */ = {
