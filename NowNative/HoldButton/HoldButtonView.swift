@@ -25,21 +25,32 @@ struct HoldButtonView: View {
 
   var body: some View {
     ZStack {
-      // Background button
+      // Growing morphing circle (POW iris-like effect)
+      if arcProgress > 0 {
+        Circle()
+          .fill(Color.amber.opacity(0.1))
+          .frame(width: BUTTON_SIZE + (arcProgress * 300), height: BUTTON_SIZE + (arcProgress * 300))
+          .shadow(color: Color.amber.opacity(0.6 * arcProgress), radius: 30 * arcProgress, x: 0, y: 0)
+          .blur(radius: 10 * arcProgress)
+          .transition(.movingParts.iris(blurRadius: 20))
+      }
+
+      // Background button with dynamic size
       Circle()
         .fill(Color.void)
         .frame(width: BUTTON_SIZE, height: BUTTON_SIZE)
         .overlay(
           Circle()
             .stroke(Color.amber, lineWidth: 1)
-            .opacity(isCompleted ? 0.4 : 0.7)
+            .opacity(isCompleted ? 0.4 : (0.7 + 0.2 * arcProgress))
         )
 
-      // Blur effect
+      // Blur effect (no clipping - allow glow overflow)
       BlurView(style: .dark)
         .frame(width: BUTTON_SIZE, height: BUTTON_SIZE)
         .clipShape(Circle())
         .opacity(blurRadius / 20.0)
+        .shadow(color: Color.amber.opacity(0.4 * arcProgress), radius: 15 * arcProgress, x: 0, y: 0)
 
       // Arc canvas
       ArcCanvasView(
@@ -47,11 +58,13 @@ struct HoldButtonView: View {
         radius: ARC_RADIUS
       )
       .frame(width: BUTTON_SIZE + 20, height: BUTTON_SIZE + 20)
+      .shadow(color: Color.amber.opacity(0.5 * arcProgress), radius: 8 * arcProgress, x: 0, y: 0)
 
-      // Center dot
+      // Center dot with glow
       Circle()
         .fill(Color.amber)
         .frame(width: 8, height: 8)
+        .shadow(color: Color.amber.opacity(0.8 * arcProgress), radius: 6 * arcProgress, x: 0, y: 0)
 
       // Phase label
       if !currentPhase.isEmpty {
