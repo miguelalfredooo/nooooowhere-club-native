@@ -16,9 +16,9 @@ Build/
 .AppleDouble
 .LSOverride
 
-# Xcode
-*.xcodeproj
-*.xcworkspace
+# Xcode user data (but keep project files)
+*.xcworkspace/xcuserdata/
+xcuserdata/
 
 # IDE
 .vscode/
