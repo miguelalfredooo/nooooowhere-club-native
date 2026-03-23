@@ -20,13 +20,33 @@ struct HoldButtonView: View {
 
   var body: some View {
     ZStack {
-      // Growing glow circle
+      // Viewport edge glow (inner glow from edges)
       if progress > 0 {
-        Circle()
-          .fill(Color.amber.opacity(0.08))
-          .frame(width: BUTTON_SIZE + (progress * 400), height: BUTTON_SIZE + (progress * 400))
-          .blur(radius: 20 * progress)
-          .shadow(color: Color.amber.opacity(0.8 * progress), radius: 40 * progress, x: 0, y: 0)
+        VStack(spacing: 0) {
+          // Top glow
+          LinearGradient(gradient: Gradient(colors: [Color.amber.opacity(0.3 * progress), Color.amber.opacity(0.05 * progress), Color.clear]), startPoint: .top, endPoint: .bottom)
+            .frame(height: 150 * progress)
+
+          Spacer()
+
+          // Bottom glow
+          LinearGradient(gradient: Gradient(colors: [Color.clear, Color.amber.opacity(0.05 * progress), Color.amber.opacity(0.3 * progress)]), startPoint: .top, endPoint: .bottom)
+            .frame(height: 150 * progress)
+        }
+        .ignoresSafeArea()
+
+        HStack(spacing: 0) {
+          // Left glow
+          LinearGradient(gradient: Gradient(colors: [Color.amber.opacity(0.3 * progress), Color.amber.opacity(0.05 * progress), Color.clear]), startPoint: .leading, endPoint: .trailing)
+            .frame(width: 150 * progress)
+
+          Spacer()
+
+          // Right glow
+          LinearGradient(gradient: Gradient(colors: [Color.clear, Color.amber.opacity(0.05 * progress), Color.amber.opacity(0.3 * progress)]), startPoint: .leading, endPoint: .trailing)
+            .frame(width: 150 * progress)
+        }
+        .ignoresSafeArea()
       }
 
       // Main button circle
