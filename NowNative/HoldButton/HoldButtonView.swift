@@ -1,6 +1,6 @@
 import UIKit
 import AVFoundation
-// import Pow  // TODO: Fix product name resolution
+import Pow
 
 /// Main HoldButton view container. Manages:
 /// - Arc canvas (Core Graphics drawing)
