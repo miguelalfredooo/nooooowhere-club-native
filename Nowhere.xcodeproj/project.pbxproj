@@ -3,100 +3,130 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
+
 /* Begin PBXBuildFile section */
-		A1001001FFFFFFFFFFFFFFFFFFFFFFFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1001002FFFFFFFFFFFFFFFFFFFFFFFF /* AppDelegate.swift */; };
-		A1001003FFFFFFFFFFFFFFFFFFFFFFFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1001004FFFFFFFFFFFFFFFFFFFFFFFF /* SceneDelegate.swift */; };
-		A1001005FFFFFFFFFFFFFFFFFFFFFFFF /* HoldButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1001006FFFFFFFFFFFFFFFFFFFFFFFF /* HoldButtonViewController.swift */; };
-		A1001007FFFFFFFFFFFFFFFFFFFFFFFF /* HoldButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1001008FFFFFFFFFFFFFFFFFFFFFFFF /* HoldButtonView.swift */; };
-		A1001009FFFFFFFFFFFFFFFFFFFFFFFF /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100100AFFFFFFFFFFFFFFFFFFFFFFFF /* CanvasView.swift */; };
-		A100100BFFFFFFFFFFFFFFFFFFFFFFFF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100100CFFFFFFFFFFFFFFFFFFFFFFFF /* Colors.swift */; };
-		A100100DFFFFFFFFFFFFFFFFFFFFFFFF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A100100EFFFFFFFFFFFFFFFFFFFFFFFF /* Info.plist */; };
-		A100100FFFFFFFFFFFFFFFFFFFFF001 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A100100FFFFFFFFFFFFFFFFFFFFF002 /* UIKit.framework */; };
-		A100100FFFFFFFFFFFFFFFFFFFFF003 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A100100FFFFFFFFFFFFFFFFFFFFF004 /* Foundation.framework */; };
-		A100100FFFFFFFFFFFFFFFFFFFFF005 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A100100FFFFFFFFFFFFFFFFFFFFF006 /* CoreGraphics.framework */; };
-		A100100FFFFFFFFFFFFFFFFFFFFF007 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A100100FFFFFFFFFFFFFFFFFFFFF008 /* AVFoundation.framework */; };
+		818D1B152F71DE3300F950AE /* Pow in Frameworks */ = {isa = PBXBuildFile; productRef = 818D1B142F71DE3300F950AE /* Pow */; };
+		A10010010001 /* NowNative/Supporting/AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10010020001 /* NowNative/Supporting/AppDelegate.swift */; };
+		A10010030001 /* NowNative/Supporting/SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10010040001 /* NowNative/Supporting/SceneDelegate.swift */; };
+		A10010050001 /* NowNative/HoldButton/HoldButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10010060001 /* NowNative/HoldButton/HoldButtonViewController.swift */; };
+		A10010070001 /* NowNative/HoldButton/HoldButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10010080001 /* NowNative/HoldButton/HoldButtonView.swift */; };
+		A10010090001 /* NowNative/HoldButton/CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100100A0001 /* NowNative/HoldButton/CanvasView.swift */; };
+		A100100B0001 /* NowNative/Resources/Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100100C0001 /* NowNative/Resources/Colors.swift */; };
+		A100100F0001 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10010100001 /* UIKit.framework */; };
+		A10010110001 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10010120001 /* Foundation.framework */; };
+		A10010130001 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10010140001 /* CoreGraphics.framework */; };
+		A10010150001 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10010160001 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		A1000F00FFFFFFFFFFFFFFFFFFFFFFFF /* Nowhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nowhere.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1001002FFFFFFFFFFFFFFFFFFFFFFFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		A1001004FFFFFFFFFFFFFFFFFFFFFFFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = SOURCE_ROOT; };
-		A1001006FFFFFFFFFFFFFFFFFFFFFFFF /* HoldButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldButtonViewController.swift; sourceTree = SOURCE_ROOT; };
-		A1001008FFFFFFFFFFFFFFFFFFFFFFFF /* HoldButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldButtonView.swift; sourceTree = SOURCE_ROOT; };
-		A100100AFFFFFFFFFFFFFFFFFFFFFFFF /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = SOURCE_ROOT; };
-		A100100CFFFFFFFFFFFFFFFFFFFFFFFF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = SOURCE_ROOT; };
-		A100100EFFFFFFFFFFFFFFFFFFFFFFFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
-		A100100FFFFFFFFFFFFFFFFFFFFF002 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		A100100FFFFFFFFFFFFFFFFFFFFF004 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A100100FFFFFFFFFFFFFFFFFFFFF006 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		A100100FFFFFFFFFFFFFFFFFFFFF008 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A10010000001 /* Nowhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nowhere.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10010020001 /* NowNative/Supporting/AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowNative/Supporting/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		A10010040001 /* NowNative/Supporting/SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowNative/Supporting/SceneDelegate.swift; sourceTree = SOURCE_ROOT; };
+		A10010060001 /* NowNative/HoldButton/HoldButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowNative/HoldButton/HoldButtonViewController.swift; sourceTree = SOURCE_ROOT; };
+		A10010080001 /* NowNative/HoldButton/HoldButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowNative/HoldButton/HoldButtonView.swift; sourceTree = SOURCE_ROOT; };
+		A100100A0001 /* NowNative/HoldButton/CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowNative/HoldButton/CanvasView.swift; sourceTree = SOURCE_ROOT; };
+		A100100C0001 /* NowNative/Resources/Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowNative/Resources/Colors.swift; sourceTree = SOURCE_ROOT; };
+		A100100E0001 /* NowNative/Supporting/Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = NowNative/Supporting/Info.plist; sourceTree = SOURCE_ROOT; };
+		A10010100001 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A10010120001 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A10010140001 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A10010160001 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
 /* Begin PBXFrameworksBuildPhase section */
-		A100100FFFFFFFFFFFFFFFFFFFFF100 /* Frameworks */ = {
+		A10010170001 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A100100FFFFFFFFFFFFFFFFFFFFF001 /* UIKit.framework in Frameworks */,
-				A100100FFFFFFFFFFFFFFFFFFFFF003 /* Foundation.framework in Frameworks */,
-				A100100FFFFFFFFFFFFFFFFFFFFF005 /* CoreGraphics.framework in Frameworks */,
-				A100100FFFFFFFFFFFFFFFFFFFFF007 /* AVFoundation.framework in Frameworks */,
+				818D1B152F71DE3300F950AE /* Pow in Frameworks */,
+				A100100F0001 /* UIKit.framework in Frameworks */,
+				A10010110001 /* Foundation.framework in Frameworks */,
+				A10010130001 /* CoreGraphics.framework in Frameworks */,
+				A10010150001 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
-		A100100FFFFFFFFFFFFFFFFFFFFF200 /* Nowhere */ = {
+		A10010180001 = {
 			isa = PBXGroup;
 			children = (
-				A1001002FFFFFFFFFFFFFFFFFFFFFFFF /* AppDelegate.swift */,
-				A1001004FFFFFFFFFFFFFFFFFFFFFFFF /* SceneDelegate.swift */,
-				A1001006FFFFFFFFFFFFFFFFFFFFFFFF /* HoldButtonViewController.swift */,
-				A1001008FFFFFFFFFFFFFFFFFFFFFFFF /* HoldButtonView.swift */,
-				A100100AFFFFFFFFFFFFFFFFFFFFFFFF /* CanvasView.swift */,
-				A100100CFFFFFFFFFFFFFFFFFFFFFFFF /* Colors.swift */,
-				A100100EFFFFFFFFFFFFFFFFFFFFFFFF /* Info.plist */,
+				A10010190001 /* NowNative */,
+				A100101A0001 /* Frameworks */,
+				A100101B0001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A10010190001 /* NowNative */ = {
+			isa = PBXGroup;
+			children = (
+				A10010020001 /* NowNative/Supporting/AppDelegate.swift */,
+				A10010040001 /* NowNative/Supporting/SceneDelegate.swift */,
+				A100101C0001 /* HoldButton */,
+				A100101D0001 /* Resources */,
+				A100101E0001 /* Supporting */,
 			);
 			path = NowNative;
 			sourceTree = SOURCE_ROOT;
 		};
-		A100100FFFFFFFFFFFFFFFFFFFFF300 /* Frameworks */ = {
+		A100101A0001 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A100100FFFFFFFFFFFFFFFFFFFFF002 /* UIKit.framework */,
-				A100100FFFFFFFFFFFFFFFFFFFFF004 /* Foundation.framework */,
-				A100100FFFFFFFFFFFFFFFFFFFFF006 /* CoreGraphics.framework */,
-				A100100FFFFFFFFFFFFFFFFFFFFF008 /* AVFoundation.framework */,
+				A10010100001 /* UIKit.framework */,
+				A10010120001 /* Foundation.framework */,
+				A10010140001 /* CoreGraphics.framework */,
+				A10010160001 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A100100FFFFFFFFFFFFFFFFFFFFF400 = {
+		A100101B0001 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A100100FFFFFFFFFFFFFFFFFFFFF200 /* Nowhere */,
-				A100100FFFFFFFFFFFFFFFFFFFFF300 /* Frameworks */,
-				A100100FFFFFFFFFFFFFFFFFFFFF500,
-			);
-			sourceTree = "<group>";
-		};
-		A100100FFFFFFFFFFFFFFFFFFFFF500 = {
-			isa = PBXGroup;
-			children = (
-				A1000F00FFFFFFFFFFFFFFFFFFFFFFFF /* Nowhere.app */,
+				A10010000001 /* Nowhere.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A100101C0001 /* HoldButton */ = {
+			isa = PBXGroup;
+			children = (
+				A10010060001 /* NowNative/HoldButton/HoldButtonViewController.swift */,
+				A10010080001 /* NowNative/HoldButton/HoldButtonView.swift */,
+				A100100A0001 /* NowNative/HoldButton/CanvasView.swift */,
+			);
+			path = HoldButton;
+			sourceTree = SOURCE_ROOT;
+		};
+		A100101D0001 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A100100C0001 /* NowNative/Resources/Colors.swift */,
+			);
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
+		};
+		A100101E0001 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				A100100E0001 /* NowNative/Supporting/Info.plist */,
+			);
+			path = Supporting;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
+
 /* Begin PBXNativeTarget section */
-		A100100FFFFFFFFFFFFFFFFFFFFF600 /* Nowhere */ = {
+		A100101F0001 /* Nowhere */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A100100FFFFFFFFFFFFFFFFFFFFF900;
+			buildConfigurationList = A10010200001 /* Build configuration list for PBXNativeTarget "Nowhere" */;
 			buildPhases = (
-				A100100FFFFFFFFFFFFFFFFFFFFF700 /* Sources */,
-				A100100FFFFFFFFFFFFFFFFFFFFF100 /* Frameworks */,
-				A100100FFFFFFFFFFFFFFFFFFFFF800 /* Resources */,
+				A10010210001 /* Sources */,
+				A10010170001 /* Frameworks */,
+				A10010220001 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -104,82 +134,246 @@
 			);
 			name = Nowhere;
 			productName = Nowhere;
-			productReference = A1000F00FFFFFFFFFFFFFFFFFFFFFFFF /* Nowhere.app */;
+			productReference = A10010000001 /* Nowhere.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
+
 /* Begin PBXProject section */
-		A100100FFFFFFFFFFFFFFFFFFFFF401 /* Project object */ = {
+		A10010230001 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					A100100FFFFFFFFFFFFFFFFFFFFF600 = {
+					A100101F0001 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = A100100FFFFFFFFFFFFFFFFFFFFF600;
+			buildConfigurationList = A10010240001 /* Build configuration list for PBXProject "Nowhere" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = A100100FFFFFFFFFFFFFFFFFFFFF400;
-			productRefGroup = A100100FFFFFFFFFFFFFFFFFFFFF500;
+			mainGroup = A10010180001;
+			packageReferences = (
+				818D1B132F71DE3300F950AE /* XCRemoteSwiftPackageReference "Pow" */,
+			);
+			productRefGroup = A100101B0001 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A100100FFFFFFFFFFFFFFFFFFFFF600 /* Nowhere */,
+				A100101F0001 /* Nowhere */,
 			);
 		};
 /* End PBXProject section */
+
 /* Begin PBXResourcesBuildPhase section */
-		A100100FFFFFFFFFFFFFFFFFFFFF800 /* Resources */ = {
+		A10010220001 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A100100DFFFFFFFFFFFFFFFFFFFFFFFF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		A100100FFFFFFFFFFFFFFFFFFFFF700 /* Sources */ = {
+		A10010210001 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1001001FFFFFFFFFFFFFFFFFFFFFFFF /* AppDelegate.swift in Sources */,
-				A1001003FFFFFFFFFFFFFFFFFFFFFFFF /* SceneDelegate.swift in Sources */,
-				A1001005FFFFFFFFFFFFFFFFFFFFFFFF /* HoldButtonViewController.swift in Sources */,
-				A1001007FFFFFFFFFFFFFFFFFFFFFFFF /* HoldButtonView.swift in Sources */,
-				A1001009FFFFFFFFFFFFFFFFFFFFFFFF /* CanvasView.swift in Sources */,
-				A100100BFFFFFFFFFFFFFFFFFFFFFFFF /* Colors.swift in Sources */,
+				A10010010001 /* NowNative/Supporting/AppDelegate.swift in Sources */,
+				A10010030001 /* NowNative/Supporting/SceneDelegate.swift in Sources */,
+				A10010050001 /* NowNative/HoldButton/HoldButtonViewController.swift in Sources */,
+				A10010070001 /* NowNative/HoldButton/HoldButtonView.swift in Sources */,
+				A10010090001 /* NowNative/HoldButton/CanvasView.swift in Sources */,
+				A100100B0001 /* NowNative/Resources/Colors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
 /* Begin XCBuildConfiguration section */
-		A100100FFFFFFFFFFFFFFFFFFFFF010 /* Debug */ = {
+		A10010250001 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUNDLE_IDENTIFIER = club.nowhere.app;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_DIALECT = "gnu++20";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DEPRECATED_OBJC_METHODS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_LEVEL = c99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/NowNative/Supporting/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = club.nowhere.app;
+				PRODUCT_NAME = Nowhere;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A10010260001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUNDLE_IDENTIFIER = club.nowhere.app;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_DIALECT = "gnu++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_METHODS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_LEVEL = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/NowNative/Supporting/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = club.nowhere.app;
+				PRODUCT_NAME = Nowhere;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A10010270001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_DIALECT = "gnu++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_METHODS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -187,6 +381,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_LEVEL = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -211,25 +406,34 @@
 			};
 			name = Debug;
 		};
-		A100100FFFFFFFFFFFFFFFFFFFFF011 /* Release */ = {
+		A10010280001 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_DIALECT = "gnu++20";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DEPRECATED_OBJC_METHODS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -255,73 +459,47 @@
 			};
 			name = Release;
 		};
-		A100100FFFFFFFFFFFFFFFFFFFFF020 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUNDLE_IDENTIFIER = "club.nowhere.app";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/NowNative/Supporting/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "club.nowhere.app";
-				PRODUCT_NAME = Nowhere;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		A100100FFFFFFFFFFFFFFFFFFFFF021 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUNDLE_IDENTIFIER = "club.nowhere.app";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/NowNative/Supporting/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "club.nowhere.app";
-				PRODUCT_NAME = Nowhere;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
+
 /* Begin XCConfigurationList section */
-		A100100FFFFFFFFFFFFFFFFFFFFF600 /* Build configuration list for PBXProject "Nowhere" */ = {
+		A10010200001 /* Build configuration list for PBXNativeTarget "Nowhere" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A100100FFFFFFFFFFFFFFFFFFFFF010 /* Debug */,
-				A100100FFFFFFFFFFFFFFFFFFFFF011 /* Release */,
+				A10010250001 /* Debug */,
+				A10010260001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A100100FFFFFFFFFFFFFFFFFFFFF900 /* Build configuration list for PBXNativeTarget "Nowhere" */ = {
+		A10010240001 /* Build configuration list for PBXProject "Nowhere" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A100100FFFFFFFFFFFFFFFFFFFFF020 /* Debug */,
-				A100100FFFFFFFFFFFFFFFFFFFFF021 /* Release */,
+				A10010270001 /* Debug */,
+				A10010280001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		818D1B132F71DE3300F950AE /* XCRemoteSwiftPackageReference "Pow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/movingparts-io/Pow.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		818D1B142F71DE3300F950AE /* Pow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 818D1B132F71DE3300F950AE /* XCRemoteSwiftPackageReference "Pow" */;
+			productName = Pow;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = A100100FFFFFFFFFFFFFFFFFFFFF401 /* Project object */;
+	rootObject = A10010230001 /* Project object */;
 }
