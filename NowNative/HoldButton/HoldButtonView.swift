@@ -82,7 +82,7 @@ class HoldButtonView: UIView {
 
   private func setupBlurView() {
     blurView.layer.cornerRadius = BUTTON_SIZE / 2
-    blurView.clipsToBounds = true
+    blurView.clipsToBounds = false  // Allow glow to extend beyond button
     blurView.alpha = 1.0  // Start fully blurred
 
     addSubview(blurView)
