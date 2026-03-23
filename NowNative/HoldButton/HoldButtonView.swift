@@ -3,14 +3,13 @@ import Pow
 
 /// SwiftUI implementation of HoldButton with POW animations
 struct HoldButtonView: View {
-  @State private var isAnimating = false
-  @State private var isCompleted = false
   @State private var arcProgress: CGFloat = 0
   @State private var blurRadius: CGFloat = 20
   @State private var currentPhase = ""
   @State private var phaseOpacity: CGFloat = 0
-  @State private var displayLink: Timer?
-  @State private var animationStartTime: Date?
+  @State private var isCompleted = false
+  @State private var isAnimating = false
+  @State private var animationTask: Task<Void, Never>?
 
   var disabled = false
   var onArcComplete: (() -> Void)
@@ -102,38 +101,41 @@ struct HoldButtonView: View {
 
   private func beginAnimation() {
     isAnimating = true
-    animationStartTime = Date()
-    print("Animation started")
+    print("🔴 Animation started")
 
-    // Start display link simulation with Timer
-    displayLink = Timer.scheduledTimer(withTimeInterval: 1/60.0, repeats: true) { _ in
-      DispatchQueue.main.async {
-        self.updateAnimationFrame()
+    // Cancel any existing animation
+    animationTask?.cancel()
+
+    animationTask = Task {
+      let startTime = Date()
+      let frameInterval = 1.0 / 60.0  // 60 FPS
+
+      while !Task.isCancelled {
+        let elapsed = Date().timeIntervalSince(startTime)
+        let progress = min(elapsed / ANIMATION_DURATION, 1.0)
+
+        print("📊 Progress: \(String(format: "%.2f", progress))")
+
+        // Update state on main thread
+        DispatchQueue.main.async {
+          self.arcProgress = progress
+          self.blurRadius = 20 - (progress * 20)
+          self.updatePhaseLabels(for: progress)
+        }
+
+        if progress >= 1.0 {
+          completeAnimation()
+          break
+        }
+
+        // Wait for next frame
+        try? await Task.sleep(nanoseconds: UInt64(frameInterval * 1_000_000_000))
       }
     }
   }
 
-  private func updateAnimationFrame() {
-    guard let startTime = animationStartTime else { return }
-
-    let elapsed = Date().timeIntervalSince(startTime)
-    let progress = min(elapsed / ANIMATION_DURATION, 1.0)
-
-    // Update animation values directly (no withAnimation - causes issues with Timer)
-    arcProgress = progress
-    blurRadius = 20 - (progress * 20)
-
-    updatePhaseLabels(for: progress)
-
-    // Complete animation
-    if progress >= 1.0 {
-      completeAnimation()
-    }
-  }
-
   private func completeAnimation() {
-    displayLink?.invalidate()
-    displayLink = nil
+    print("✅ Animation completed")
     isAnimating = false
     isCompleted = true
 
@@ -150,8 +152,9 @@ struct HoldButtonView: View {
   }
 
   private func resetAnimation() {
-    displayLink?.invalidate()
-    displayLink = nil
+    print("⏮️ Animation reset")
+    animationTask?.cancel()
+    animationTask = nil
     isAnimating = false
     currentPhase = ""
 
@@ -159,6 +162,7 @@ struct HoldButtonView: View {
       arcProgress = 0
       blurRadius = 20
       phaseOpacity = 0
+      isCompleted = false
     }
   }
 
