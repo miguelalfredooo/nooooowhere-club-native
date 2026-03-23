@@ -1,4 +1,5 @@
 import UIKit
+import SwiftUI
 
 struct Colors {
   static let void = UIColor(red: 0.04, green: 0.04, blue: 0.05, alpha: 1.0)        // #0A0908
@@ -8,4 +9,15 @@ struct Colors {
   static let amber = UIColor(red: 0.77, green: 0.57, blue: 0.16, alpha: 1.0)      // #C4922A
   static let verdigris = UIColor(red: 0.29, green: 0.49, blue: 0.44, alpha: 1.0)  // #4A7C6F
   static let oxide = UIColor(red: 0.55, green: 0.23, blue: 0.16, alpha: 1.0)      // #8B3A2A
+}
+
+// SwiftUI Color extensions
+extension Color {
+  static let void = Color(red: 0.04, green: 0.04, blue: 0.05)
+  static let parchment = Color(red: 0.95, green: 0.93, blue: 0.89)
+  static let iron = Color(red: 0.16, green: 0.15, blue: 0.13)
+  static let dust = Color(red: 0.60, green: 0.56, blue: 0.51)
+  static let amber = Color(red: 0.77, green: 0.57, blue: 0.16)
+  static let verdigris = Color(red: 0.29, green: 0.49, blue: 0.44)
+  static let oxide = Color(red: 0.55, green: 0.23, blue: 0.16)
 }

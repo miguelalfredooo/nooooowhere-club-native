@@ -12,7 +12,6 @@
 		A10010030001 /* NowNative/Supporting/SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10010040001 /* NowNative/Supporting/SceneDelegate.swift */; };
 		A10010050001 /* NowNative/HoldButton/HoldButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10010060001 /* NowNative/HoldButton/HoldButtonViewController.swift */; };
 		A10010070001 /* NowNative/HoldButton/HoldButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10010080001 /* NowNative/HoldButton/HoldButtonView.swift */; };
-		A10010090001 /* NowNative/HoldButton/CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100100A0001 /* NowNative/HoldButton/CanvasView.swift */; };
 		A100100B0001 /* NowNative/Resources/Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100100C0001 /* NowNative/Resources/Colors.swift */; };
 		A100100F0001 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10010100001 /* UIKit.framework */; };
 		A10010110001 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10010120001 /* Foundation.framework */; };
@@ -26,7 +25,6 @@
 		A10010040001 /* NowNative/Supporting/SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowNative/Supporting/SceneDelegate.swift; sourceTree = SOURCE_ROOT; };
 		A10010060001 /* NowNative/HoldButton/HoldButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowNative/HoldButton/HoldButtonViewController.swift; sourceTree = SOURCE_ROOT; };
 		A10010080001 /* NowNative/HoldButton/HoldButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowNative/HoldButton/HoldButtonView.swift; sourceTree = SOURCE_ROOT; };
-		A100100A0001 /* NowNative/HoldButton/CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowNative/HoldButton/CanvasView.swift; sourceTree = SOURCE_ROOT; };
 		A100100C0001 /* NowNative/Resources/Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowNative/Resources/Colors.swift; sourceTree = SOURCE_ROOT; };
 		A100100E0001 /* NowNative/Supporting/Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = NowNative/Supporting/Info.plist; sourceTree = SOURCE_ROOT; };
 		A10010100001 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -96,7 +94,6 @@
 			children = (
 				A10010060001 /* NowNative/HoldButton/HoldButtonViewController.swift */,
 				A10010080001 /* NowNative/HoldButton/HoldButtonView.swift */,
-				A100100A0001 /* NowNative/HoldButton/CanvasView.swift */,
 			);
 			path = HoldButton;
 			sourceTree = SOURCE_ROOT;

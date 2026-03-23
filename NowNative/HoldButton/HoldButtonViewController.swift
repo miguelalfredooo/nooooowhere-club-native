@@ -1,31 +1,39 @@
 import UIKit
+import SwiftUI
 
 /// Container view controller for the HoldButton interaction.
-/// Manages the layout and demonstrates the hold button in context.
+/// Hosts the SwiftUI HoldButton view.
 class HoldButtonViewController: UIViewController {
-  private let holdButton = HoldButtonView()
+  private var hostingController: UIHostingController<HoldButtonView>?
 
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = Colors.void
-    setupHoldButton()
-    setupCallbacks()
+    setupSwiftUIButton()
   }
 
-  private func setupHoldButton() {
-    holdButton.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(holdButton)
+  private func setupSwiftUIButton() {
+    let holdButtonView = HoldButtonView(onArcComplete: { [weak self] in
+      self?.handleArcComplete()
+    })
+
+    let hostingController = UIHostingController(rootView: holdButtonView)
+    self.hostingController = hostingController
+
+    addChild(hostingController)
+    view.addSubview(hostingController.view)
+
+    hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+    hostingController.view.backgroundColor = Colors.void
 
     NSLayoutConstraint.activate([
-      holdButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      holdButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
+      hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
+      hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
     ])
-  }
 
-  private func setupCallbacks() {
-    holdButton.onArcComplete = { [weak self] in
-      self?.handleArcComplete()
-    }
+    hostingController.didMove(toParent: self)
   }
 
   private func handleArcComplete() {
